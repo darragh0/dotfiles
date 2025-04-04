@@ -10,8 +10,8 @@ opt.tabstop = 4
 opt.softtabstop = 4
 opt.ignorecase = true
 opt.smartcase = true
--- opt.list = true
--- opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
+opt.list = true
+vim.opt.listchars:append { eol = "↵", tab = "» ", trail = "·", nbsp = "␣" }
 
 -- After startup
 vim.schedule(function()
