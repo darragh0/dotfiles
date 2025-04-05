@@ -20,6 +20,7 @@ alias python="python3"
 # Neovim
 alias vim="nvim"
 alias vi="nvim"
+alias nv="nvim"
 
 # Git/GitHub
 alias ga="git add"
@@ -55,4 +56,3 @@ alias suvi="sudo nvim"
 alias brc="nvim $HOME/.bashrc"
 alias zrc="nvim $HOME/.zshrc"
 alias aliases="nvim $ZSH_CUSTOM/aliases.zsh"
-
