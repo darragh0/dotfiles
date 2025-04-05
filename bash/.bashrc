@@ -140,9 +140,13 @@ __prompt_cmd() {
         PS1+="($f_red$EXIT$f_res) $PS1"
     fi
 
+    if [[ -n "$VIRTUAL_ENV" ]]; then
+        PS1+="(${f_lgrn}$(basename "$VIRTUAL_ENV")${f_res}) $PS1"
+    fi
+
     PS1+="[${f_blu}\w${f_res}] "
-    PS1+='$(__git_ps1 "(${f_cyn} %s${f_res}) ")'
-    PS1+="${f_lgrn}󰁔 $f_res"
+    PS1+='$(__git_ps1 "(${f_lylw} %s${f_res}) ")'
+    PS1+="${f_lcyn}󰁔 $f_res"
 }
 
 source /usr/local/bin/git-prompt.sh
@@ -162,6 +166,6 @@ export NVM_DIR="$HOME/.nvm"
 cd
 
 # Enable Nord dir colors (https://www.nordtheme.com/docs/ports/dircolors/installation, see ~/./bash_dir_colors.sh)
-test -r ~/.bash_dir_colors && eval $(dircolors ~/.bash_dir_colors)
+test -r "$HOME/.dir_colors" && eval $(dircolors "$HOME/.dir_colors")
 
 eval "$(zoxide init bash --cmd cd)"
